@@ -7,8 +7,28 @@ namespace EspacioEmpeado
         private string nombre;
         private string apellido;
         private DateTime fechaNacimiento;
+
         public string EstadoCivil;
         private DateTime fechaDeingreso;
+
+        public double SueldoBasico()
+        {
+            switch (cargo)
+            {
+                case Cargos.Administrativo:
+                    return 650000;
+                case Cargos.Auxiliar:
+                    return 450000;
+                case Cargos.Especialista:
+                    return 900000;
+                case Cargos.Investigador:
+                    return 1200000;
+                case Cargos.Ingeniero:
+                    return 1200000;
+                default:
+                    return 0;
+            }
+        }
         public Cargos cargo;
 
         public Empleado(string nombre, string apellido, DateTime fechaNacimiento, DateTime fechaDeIngreso)
@@ -68,24 +88,6 @@ namespace EspacioEmpeado
             return Math.Round(salario, 2);
         }
 
-        public double SueldoBasico()
-        {
-            switch (cargo)
-            {
-                case Cargos.Administrativo:
-                    return 650000;
-                case Cargos.Auxiliar:
-                    return 450000;
-                case Cargos.Especialista:
-                    return 900000;
-                case Cargos.Investigador:
-                    return 1200000;
-                case Cargos.Ingeniero:
-                    return 1200000;
-                default:
-                    return 0;
-            }
-        }
     }
 
     public enum Cargos
