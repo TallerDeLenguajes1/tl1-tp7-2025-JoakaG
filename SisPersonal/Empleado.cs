@@ -21,6 +21,8 @@ namespace EspacioEmpeado
         }
         public DateTime FechaDeingreso { get => fechaDeingreso; set => fechaDeingreso = value; }
         public DateTime FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; }
+        public string Nombre { get => nombre; }
+        public string Apellido { get => apellido; }
 
         public double Antiguedad()
         {
